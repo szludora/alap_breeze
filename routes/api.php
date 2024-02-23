@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('/kategoriak', KategoriaController::class);
 Route::resource('/ingatlanok', IngatlanController::class);
+Route::get('/kategoriak', [KategoriaController::class, 'kategoriak']);

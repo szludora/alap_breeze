@@ -30,4 +30,16 @@ class KategoriaController extends Controller
     {
         Kategoria::findOrFail($id)->delete();
     }
+
+    public function kategoriak()
+    {
+        return array(
+            "Ház",
+            "Lakás",
+            "Építési telek",
+            "Garázs",
+            "Mezőgazdasági terület",
+            "Ipari ingatlan"
+        );
+    }
 }
