@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kategoria')->references('id')->on('kategorias');
             $table->string('leiras');
-            $table->date('hirdetesDatuma');
+            $table->date('hirdetesDatuma')->nullable()->default(now());
             $table->boolean('tehermentes');
             $table->integer('ar');
             $table->string('kepUrl');
