@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -17,7 +18,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kategoria')->references('id')->on('kategorias');
             $table->string('leiras');
-            $table->date('hirdetesDatuma')->nullable()->default(now());
+            // default dátum amikor rögzítésre kerül a rekord
+            $table->date('hirdetesDatuma')->default(DB::raw('CURRENT_DATE'));
             $table->boolean('tehermentes');
             $table->integer('ar');
             $table->string('kepUrl');
