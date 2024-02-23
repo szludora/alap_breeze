@@ -3,14 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ingatlan;
+use App\Models\Kategoria;
 use Illuminate\Http\Request;
 
 class IngatlanController extends Controller
 {
-    public function index()
+    // appends használatakor
+     public function index()
     {
-        return response()->json(Ingatlan::all());
-    }
+        return Ingatlan::all();
+    } 
+
+ /*  
+    // with-es megoldás
+ public function index()
+    {
+        return Ingatlan::with('kategoriaja:id,nev')->get();
+    } */
 
     public function show($id)
     {
