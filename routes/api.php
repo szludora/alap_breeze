@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\IngatlanController;
+use App\Http\Controllers\KategoriaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('/kategoriak', KategoriaController::class);
+Route::apiResource('/ingatlanok', IngatlanController::class);
