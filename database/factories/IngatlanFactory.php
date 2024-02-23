@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Ingatlan;
 use App\Models\Kategoria;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,7 +24,7 @@ class IngatlanFactory extends Factory
             'hirdetesDatuma' => fake()->date(),
             'tehermentes' => rand(0, 1),
             'ar' => rand(10, 80),
-            'kepUrl' => fake()->url(),
+            'kepUrl' => fake()->randomElement(Ingatlan::$kepek),
         ];
     }
 }
