@@ -33,13 +33,7 @@ class KategoriaController extends Controller
 
     public function kategoriak()
     {
-        return array(
-            "Ház",
-            "Lakás",
-            "Építési telek",
-            "Garázs",
-            "Mezőgazdasági terület",
-            "Ipari ingatlan"
-        );
+
+        return ["Ház", "Lakás", "Építési telek", "Garázs", "Mezőgazdasági terület", "Ipari ingatlan"];
     }
 }
